@@ -1,0 +1,36 @@
+Standing on the doorstep to SpeckBit, I was unsure as to why enrolled into this programme. But I just thought, 'To hell with it,' and put my first step forward into the room, towards this classroom, towards something new, towards a goal, and towards a change. Mostly in me.
+
+My journey here has been astounding. And too quick. I travelled in a Shinkansen, taking in glimpses of the stations in between, my first stop being on 'How to ask questions'. 
+
+
+mindset
+and share deficiency
+cross-learning
+
+Talking 
+
+-------------------
+
+Talking about my experiences in SpeckBit, I can quite say that I was scared throughout it. I was scared to choose FMS or Python. I was scared to chose HDS too. I was scared when I didn't get the first algorithm on the first try. I was scared that I wouldn't catch up on regression. I was scared when my peers got a concept before I did. And I never thought that VD roleplaying as a 10th grader would be scary. 
+
+However, I was thrilled when I completed my first assignment. It was fun during the team bonding activities. And I was excited to explore new concepts for my Capstone projects. And I was happy to have peers who were enthusiastic in learning new stuff.
+
+If there is one thing I would forever remember as a part of SpeckBit, it would be to always question the knowledge you receive and to always try something you've never ventured to before.
+
+==
+
+I decided to predict personality based on their tweets. It was a challenge my Sister threw on me after my disbelief over the inaccuracy of the personality predictions online. 
+
+One of the most popular personality tests is the Myers-Briggs Type Indicator (MBTI). An MBTI personality can be defined on four metrics each taking one of the two possible values. The test is used by Fortune 100 companies, churches and military to summarize who you are and what brought you to the table. However, questionnaires as to how much one thing relates to themselves can be faked to achieve ideal result. Hence, an analysis can be done based on things which cannot be faked on an impulse such as history tweets on Twitter. 
+
+==
+
+A quick search on google lead me to a MBTI dataset about tweets and personality types on Kaggle. Every person had a collection of tweets over which personality analysis could be performed. The dataset is of the form of comma separated values and loaded into pandas DataFrame.
+* First thing to note is the high amount of data representing INFP, INFJ and INTP personality type. Hence probability of predicting these types accurately is high. I made use of some Statical modelling graphs pf mathplotlib package.
+* Second thing to understand is that punctuation marks are significant only to demonstrate the intention behind a sentence but is of no signicance to perform analysis on. Even stop words (words which do not add much meaning to a sentence) don't affect the prediction. Hence I have cleaned the data of such. I made use of methods from Regular Expression module of python library.
+* Next is to convert all tweets as a bag of words so that I can derive the root form of all the words. I used lemmatizers of sklearn package to achieve the root forms of the words.
+* An important part of the analysis is to know how much the presence of a word affects the prediction of personality. Hence I used CountVectoriser sklearn.feature_extraction.text which returns values 0's and 1's representing absence and presence of a word respectively.
+* Similarly I used get_dummies method of pandas package to vectorise the 16 different classes of personality types.
+* I split the dataset into 2 sets: one to train a model and the other to test it.
+* Then came the construction of a Neural Network Sequential model using Keras API. After playing around with different combinations of different layers, the final model was decided upon and tested using the test values.
+* The final model is trained on the whole dataset and ready to predict personality based collection of tweets..
